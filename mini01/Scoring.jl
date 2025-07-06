@@ -59,8 +59,8 @@ function score_function(g, communities)
         println("  External edges: ", collect(external_edges))
 
         external_possible = length(community) * (nv(g) - length(community))
-        internal_ratio = length(internal_edges) / max_internal
-        external_ratio = length(external_edges) / external_possible
+        internal_ratio = max_internal == 0 ? 0.0 : length(internal_edges) / max_internal
+        external_ratio = external_possible == 0 ? 0.0 : length(external_edges) / external_possible
 #finally here i intergrate the internal calc and external calc together to my scoring formula excluding deviding it by the total goups t
         group_score = internal_ratio * (1 - external_ratio)
         println("  Group score: ", round(group_score, digits=3))
@@ -73,7 +73,7 @@ function score_function(g, communities)
     return final_score
 end
 
-function main(filename = "graph01.txt")
+function main(filename = "graph08.txt")
     edge_list = read_edges(filename)
     g = build_graph(edge_list)
 
