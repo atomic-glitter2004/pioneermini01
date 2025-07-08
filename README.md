@@ -1,3 +1,3 @@
-This is Ash's files for the pioneer summer session 2025's mini project 1
+This is Ash's files for Pioneer mini projetcs
 
-Main scoring function could be found in "Scoring"
+Code for each project could be found in the spesiic project folders
